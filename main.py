@@ -1,8 +1,13 @@
 import os
 from flask import Flask, request, jsonify
 import db_service
+from flasgger import Swagger, swag_from
+from swagger.swagger_config import swagger_config
+
 
 app = Flask(__name__)
+swagger = Swagger(app, config=swagger_config)
+
 
 # Check if DB exists, if not create empty new DB
 if not os.path.exists(db_service.db_path):
