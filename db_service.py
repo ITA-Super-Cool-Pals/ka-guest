@@ -1,7 +1,7 @@
 import sqlite3
 import os
 
-db_path = os.getenv('DB_PATH', 'guests.db')
+db_path = os.getenv('DB_PATH')
 
 def init():
     """Initialize the guests table if it doesn't exist."""
