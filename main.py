@@ -10,11 +10,8 @@ swagger = Swagger(app, config=swagger_config)
 
 
 # Check if DB exists, if not create empty new DB
-if not os.path.exists(db_service.db_path):
-    print('guests db not found, creating new')
-    db_service.init()
-else:
-    print(f'guests db found, using it at {db_service.db_path}')
+db_service.init()
+
 
 @app.route('/')
 def index():
@@ -72,5 +69,5 @@ def delete_guest(guest_id):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run()
 
