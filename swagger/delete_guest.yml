@@ -1,0 +1,33 @@
+summary: Delete a guest by ID
+description: Delete a guest from the database by their ID
+parameters:
+  - name: guest_id
+    in: path
+    type: integer
+    required: true
+    description: The ID of the guest to delete
+responses:
+  200:
+    description: Guest deleted successfully
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Guest with ID 1 deleted successfully
+  404:
+    description: Guest not found
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Guest not found
+  500:
+    description: Internal server error
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Internal server error

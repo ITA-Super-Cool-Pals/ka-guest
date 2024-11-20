@@ -1,0 +1,27 @@
+summary: Get a guest by ID
+description: Retrieve a guest by their ID
+parameters:
+  - name: guest_id
+    in: path
+    type: integer
+    required: true
+    description: The ID of the guest
+responses:
+  200:
+    description: A guest object
+    schema:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: John Doe
+        email:
+          type: string
+          example: johndoe@example.com
+  404:
+    description: Guest not found
+  500:
+    description: Internal server error

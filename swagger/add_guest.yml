@@ -1,0 +1,56 @@
+summary: Add a new guest
+description: Add a new guest to the database
+parameters:
+  - name: body
+    in: body
+    required: true
+    description: The guest data
+    schema:
+      type: object
+      required:
+        - guestId
+        - name
+        - email
+      properties:
+        guestId:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: John Doe
+        email:
+          type: string
+          example: johndoe@example.com
+responses:
+  201:
+    description: Guest created successfully
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Guest created successfully with ID 1
+  400:
+    description: Data is required
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Data is required
+  409:
+    description: Guest already exists
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Guest already exists
+  500:
+    description: Error creating guest
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Error creating guest
