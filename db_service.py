@@ -4,8 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-#db_path = os.getenv('DB_PATH')
-db_path = 'guests.db'
+db_path = os.getenv('DB_PATH')
 
 def init():
     """Initialize the guests table if it doesn't exist."""
