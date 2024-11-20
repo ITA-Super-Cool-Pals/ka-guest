@@ -10,7 +10,7 @@ parameters:
       required:
         - guestId
         - name
-        - email
+        - tlf
       properties:
         guestId:
           type: integer
@@ -18,9 +18,9 @@ parameters:
         name:
           type: string
           example: John Doe
-        email:
-          type: string
-          example: johndoe@example.com
+        tlf:
+          type: integer
+          example: 12345678
 responses:
   201:
     description: Guest created successfully
