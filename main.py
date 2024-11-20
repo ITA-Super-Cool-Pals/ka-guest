@@ -71,7 +71,6 @@ def delete_guest(guest_id):
     db_service.delete(guest_id)
     return jsonify(message=f"Guest with ID {guest_id} deleted successfully"), 200
 
-
 if __name__ == '__main__':
     app.run()
 
