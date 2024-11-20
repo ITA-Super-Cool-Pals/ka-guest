@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_4484e89f42f24a319f75fe421bb3e886 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_68e96360f19343babf7d30a7f0e22100 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_6dfdaeeab1b348b08bffed3a614547bb }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_c50c84c3b4914331b1b1fcb080061593 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_4484e89f42f24a319f75fe421bb3e886 }}/ka-guest:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_6dfdaeeab1b348b08bffed3a614547bb }}/daidalost/ka-guest:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'ka-guest-swagger'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_c7823c5ca39f480e97b76ebe7037c3e4 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_4484e89f42f24a319f75fe421bb3e886 }}/ka-guest:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_548aaefac35f49ff9b901b23dea3ac82 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_6dfdaeeab1b348b08bffed3a614547bb }}/daidalost/ka-guest:${{ github.sha }}'
