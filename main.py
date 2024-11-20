@@ -19,6 +19,7 @@ def index():
 
 # Get all guests
 @app.route('/guests', methods=['GET'])
+@swag_from('swagger/get_guests.yml')
 def get_guests():
     try:
         guests = db_service.read_all()
