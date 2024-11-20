@@ -34,7 +34,7 @@ def get_guests():
 
 # Get a guest by ID
 @app.route('/guests/<int:guest_id>', methods=['GET'])
-#@swag_from('swagger/get_guest.yml')
+@swag_from('swagger/get_guest.yml')
 def get_guest(guest_id):
     guest = db_service.read(guest_id)
     if guest:
@@ -44,7 +44,7 @@ def get_guest(guest_id):
 
 # Add a new guest
 @app.route('/guests', methods=['POST'])
-#@swag_from('swagger/add_guest.yml')
+@swag_from('swagger/add_guest.yml')
 def add_guest():
     data = request.get_json()
 
@@ -63,7 +63,7 @@ def add_guest():
 
 # Delete a guest by ID
 @app.route('/guests/<int:guest_id>', methods=['DELETE'])
-#@swag_from('swagger/delete_guest.yml')
+@swag_from('swagger/delete_guest.yml')
 def delete_guest(guest_id):
     guest = db_service.read(guest_id)
     
