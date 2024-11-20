@@ -9,14 +9,14 @@ responses:
     schema:
       type: array
       items:
-      type: object
-      properties:
-        id:
-        type: integer
-        example: 1
-        name:
-        type: string
-        example: John Doe
+        type: object
+        properties:
+          id:
+            type: integer
+            example: 1
+          name:
+            type: string
+            example: John Doe
   404:
     description: No guests found
   500:

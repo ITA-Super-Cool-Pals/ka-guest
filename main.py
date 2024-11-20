@@ -2,8 +2,10 @@ import os
 from flask import Flask, request, jsonify
 import db_service
 from flasgger import Swagger, swag_from
+from dotenv import load_dotenv
 from swagger.swagger_config import swagger_config
 
+load_dotenv()
 
 app = Flask(__name__)
 swagger = Swagger(app, config=swagger_config)

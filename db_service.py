@@ -1,7 +1,11 @@
 import sqlite3
 import os
+from dotenv import load_dotenv
 
-db_path = os.getenv('DB_PATH')
+load_dotenv()
+
+#db_path = os.getenv('DB_PATH')
+db_path = 'guests.db'
 
 def init():
     """Initialize the guests table if it doesn't exist."""
