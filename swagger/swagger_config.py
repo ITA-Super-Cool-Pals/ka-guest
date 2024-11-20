@@ -14,3 +14,19 @@ swagger_config = {
     "swagger_ui": True,
     "specs_route": "/apidocs/"
 }
+
+template = {
+    "info": {
+        "title": "Kong Arthurs Hotel Case API",
+        "description": "API for Kong Arthurs Hotel Case",
+        "version": "1.0.0",
+    },
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\""
+        }
+    }
+}
