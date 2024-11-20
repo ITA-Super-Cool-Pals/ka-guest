@@ -6,7 +6,7 @@ name: Build and deploy container app to Azure Web App - ka-guest-swagger
 on:
   push:
     branches:
-      - swagger
+      - main_azure
   workflow_dispatch:
 
 jobs:
