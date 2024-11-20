@@ -11,5 +11,4 @@ WORKDIR /app
 RUN pip install -r requirements.txt
 
 # Eksekver denne kommando når Containeren køres
-#CMD ["python", "main.py"]
 CMD ["gunicorn", "--bind", "0.0.0.0:80", "main:app"]

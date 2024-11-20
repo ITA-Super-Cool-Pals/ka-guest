@@ -1,8 +1,13 @@
 import os
 from flask import Flask, request, jsonify
 import db_service
+from flasgger import Swagger, swag_from
+from swagger.swagger_config import swagger_config
+
 
 app = Flask(__name__)
+swagger = Swagger(app, config=swagger_config)
+
 
 # Check if DB exists, if not create empty new DB
 db_service.init()
@@ -14,6 +19,7 @@ def index():
 
 # Get all guests
 @app.route('/guests', methods=['GET'])
+@swag_from('swagger/get_guests.yml')
 def get_guests():
     try:
         guests = db_service.read_all()
